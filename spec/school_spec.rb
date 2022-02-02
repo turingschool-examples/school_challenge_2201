@@ -40,7 +40,7 @@ RSpec.describe School do
       expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    xit 'can calculate end time' do #skipped for now
+    it 'can calculate end time' do #skipped for now
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
@@ -53,10 +53,8 @@ RSpec.describe School do
     # Add your own tests that follow the interaction pattern for Iteration 3
     it 'determines whether full time' do
       school = School.new('9:00', 7)
-      expect(school.is_full_time?('9:00', 7)).to eq true
+      expect(school.is_full_time?('9:00', 7)).to be(true)
     end
-
-
   end
 
   context 'Iteration 4' do

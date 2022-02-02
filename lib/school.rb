@@ -11,19 +11,16 @@ class School
     @student_names.push(name)
   end
 
-  def end_time
-    st= (first).to_i
-    et= st + seconde
-    end_time = Time.at(et)
+  def end_time 
+    t = first.to_datetime
+    end_time = t + second
   end
 
-  def is_full_time?
-    if second >4
-     true
+  def is_full_time?(hour, time)
+    if time > 4
+      true
     elsif
-     false
-   end
- end
- 
-
+      false
+    end
+  end
 end
