@@ -70,6 +70,15 @@ RSpec.describe School do
   end
 
   context 'Iteration 4' do
-    # Add your own tests that follow the interaction pattern for Iteration 4
+    it 'can return a 12 hour end time' do
+      school_1 = School.new('8:00', 4)
+      school_2 = School.new('6:00', 3)
+      school_3 = School.new('8:00', 9)
+
+      expect(school_1.convert_end_time_to_clock_time).to eq('12:00')
+      expect(school_2.convert_end_time_to_clock_time).to eq('9:00')
+      expect(school_3.convert_end_time_to_clock_time).to eq('5:00')
+    end
+
   end
 end

@@ -41,4 +41,16 @@ class School
     end
     return standardized_names
   end
+  #convert the end-time from 24h to 12h
+  def convert_end_time_to_clock_time
+    if(@end_time[1]==":")
+      return @end_time
+    elsif (@end_time[1] == "0" || @end_time[1] == "1" || @end_time[1] == "2")
+      return @end_time
+    else
+      twelve_hour_converter = @end_time[0,1].to_i
+      twelve_hour_converter -= 12
+      return "#{twelve_hour_converter}:00"
+    end
+  end
 end
