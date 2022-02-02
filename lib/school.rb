@@ -24,4 +24,15 @@ class School
   def standard_student_names
     student_names.map(&:capitalize)
   end
+
+  def convert_end_time_to_clock_time
+    end_time_int = start_time.to_i + hours_in_school_day
+    end_time_str = end_time_int.to_s + ":00"
+
+    if end_time_int > 12
+    end_time_str - 12
+    else
+
+    end
+  end
 end
