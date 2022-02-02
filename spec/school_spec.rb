@@ -76,8 +76,13 @@ RSpec.describe School do
     end
 
     it 'takes into account early closing days as well' do
-      school = School.new('7', 4)
-      expect(school.convert_end_time_to_clock_time).to eq('11:00')
+      school = School.new('6', 6)
+      expect(school.convert_end_time_to_clock_time).to eq('12:00')
+    end
+
+    it "makes sure it can't go over 23:00" do
+      school = School.new('15:00', 10)
+      expect(school.convert_end_time_to_clock_time).to eq("School goes past midnight 😬")
     end
 
   end
