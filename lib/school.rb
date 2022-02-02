@@ -11,6 +11,18 @@ class School
 
   def add_student_name(student_name)
     @student_names << student_name
-  end 
+  end
+
+  def end_time
+    end_time = (start_time.to_i + hours_in_school_day).to_s + ":00"
+  end
+
+  def is_full_time?
+    if hours_in_school_day > 4
+      p "true"
+    else
+      p "false"
+    end
+  end
 
 end

@@ -40,7 +40,7 @@ RSpec.describe School do
       expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    xit 'can calculate end time' do
+    it 'can calculate end time' do
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
@@ -50,7 +50,24 @@ RSpec.describe School do
   end
 
   context 'Iteration 3' do
-    # Add your own tests that follow the interaction pattern for Iteration 3
+    it "creates an instance of school class" do
+      school = School.new("9:00", 7)
+      expect(school).to be_an_instance_of School
+    end
+
+    it "asks about full time" do
+      school = School.new("9:00", 7)
+      expect(school.is_full_time?).to eq("true")
+    end
+
+    it "adds students" do
+      school = School.new("9:00", 7)
+
+      school.add_student_name("Aurora")
+      school.add_student_name("tim")
+      school.add_student_name("megan")
+      expect(school.student_names).to eq(["Aurora", "tim", "megan"])
+    end
   end
 
   context 'Iteration 4' do
