@@ -48,4 +48,12 @@ RSpec.describe School do
       expect(school_2.end_time).to eq('12:00')
     end
   end
+
+  context 'Iteration 3' do
+    # Add your own tests that follow the interaction pattern for Iteration 3
+  end
+
+  context 'Iteration 4' do
+    # Add your own tests that follow the interaction pattern for Iteration 4
+  end
 end
