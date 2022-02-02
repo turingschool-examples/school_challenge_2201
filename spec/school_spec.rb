@@ -22,7 +22,7 @@ RSpec.describe School do
       expect(school.hours_in_school_day).to eq(7)
     end
 
-    xit 'starts with no student names' do
+    it 'starts with no student names' do
       school = School.new('9:00', 7)
 
       expect(school.student_names).to eq([])
