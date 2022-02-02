@@ -16,7 +16,7 @@ RSpec.describe School do
       expect(school.start_time).to eq('9:00')
     end
 
-    xit 'has hours in a school day' do
+    it 'has hours in a school day' do
       school = School.new('9:00', 7)
 
       expect(school.hours_in_school_day).to eq(7)
