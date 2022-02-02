@@ -25,4 +25,13 @@ class School
       false
     end
   end
+
+  def standard_student_names
+    ssn = []
+    @student_names.each do |student|
+      ssn << student.capitalize
+    end
+
+    return ssn
+  end
 end
