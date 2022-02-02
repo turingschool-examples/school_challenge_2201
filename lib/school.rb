@@ -32,4 +32,14 @@ class School
         end
         return standard_names
     end
+
+    def convert_end_time_to_clock_time
+        end_time = start_time.to_i + hours_in_school_day
+        if end_time > 12
+            end_time -= 12
+            return "#{end_time}:00"
+        else
+            return "#{end_time}:00"
+        end
+    end
 end
