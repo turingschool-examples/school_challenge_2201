@@ -38,4 +38,19 @@ class School
     return @standard_student_names
   end
 
+  def convert_end_time_to_clock_time
+    @start_time = @start_time[0]
+    @start_time = @start_time.to_i
+    @end_time = @start_time + @hours_in_school_day
+    if @end_time > 12
+      @end_time = @end_time - 12
+    else
+      @end_time
+    end
+    @end_time = @end_time.to_s
+    @end_time = @end_time + ":00"
+    return @end_time
+
+  end
+
 end
