@@ -30,7 +30,7 @@ RSpec.describe School do
   end
 
   context 'Iteration 2' do
-    xit 'can add student names' do
+    it 'can add student names' do
       school = School.new('9:00', 7)
 
       school.add_student_name('Aurora')
@@ -40,7 +40,7 @@ RSpec.describe School do
       expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    xit 'can calculate end time' do
+    it 'can calculate end time' do
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
@@ -51,9 +51,33 @@ RSpec.describe School do
 
   context 'Iteration 3' do
     # Add your own tests that follow the interaction pattern for Iteration 3
+    describe 'is_it_full_time?' do
+      it 'can tell if a school is full time' do
+        school = School.new('9:00', 7)
+        school.add_student_name('Aurora')
+        school.add_student_name('tim')
+        school.add_student_name('megan')
+        expect(school.is_full_time?).to eq(true)
+      end
+    end
+    describe 'standard_student_names' do
+      it 'can return a list of capitalized student names' do
+        school = School.new('9:00', 7)
+        school.add_student_name('Aurora')
+        school.add_student_name('tim')
+        school.add_student_name('megan')
+        expect(school.standard_student_names).to eq(['Aurora', 'Tim', 'Megan'])
+      end
+    end
   end
 
   context 'Iteration 4' do
     # Add your own tests that follow the interaction pattern for Iteration 4
+    describe 'convert_end_time_to_clock_time' do
+      it 'changes format of end time to a 12 hour format' do
+        school = School.new('9:00', 7)
+        expect(school.convert_end_time_to_clock_time).to eq("4:00")
+      end
+    end
   end
 end
