@@ -31,7 +31,13 @@ class School
     @student_names.each do |student|
       ssn << student.capitalize
     end
-
     return ssn
+  end
+
+  def convert_end_time_to_clock_time
+    # binding.pry
+    if end_time.to_i > 12
+      (end_time.to_i - 12).to_s + (":00")
+    end
   end
 end
