@@ -72,8 +72,9 @@ class School
     end
   end
 
-  def alphabetize_students
-    @student_names.sort
-  end
+  #trying another method
+  # def alphabetize_students
+  #   @student_names.sort
+  # end
 
 end
