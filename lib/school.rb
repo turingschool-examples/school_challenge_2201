@@ -8,7 +8,7 @@ attr_reader :start_time, :hours_in_school_day, :student_names, :end_time
     @start_time = start_time
     @hours_in_school_day = hours_in_school_day
     @student_names = []
-    @end_time
+    @end_time = @start_time.to_i + @hours_in_school_day
   end
 
   def add_student_name(student)
@@ -16,9 +16,7 @@ attr_reader :start_time, :hours_in_school_day, :student_names, :end_time
   end
 
   def end_time
-    @end_time = @start_time.to_i + @hours_in_school_day
-    time = @end_time
-    return time.to_s
+    return @end_time.to_s + ":00"
   end
 
   def is_full_time?
@@ -34,10 +32,6 @@ attr_reader :start_time, :hours_in_school_day, :student_names, :end_time
       standard_upper_case << student.capitalize
     end
     standard_upper_case
-
-    # student_upper_case = @student_names
-    # student_upper_case.to_s.capitalize
-    # student_upper_case.to_a
   end
 
 end
