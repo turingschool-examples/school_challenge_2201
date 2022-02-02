@@ -68,6 +68,17 @@ RSpec.describe School do
       school.add_student_name("megan")
       expect(school.student_names).to eq(["Aurora", "tim", "megan"])
     end
+
+    it "capitalizes names" do
+      school = School.new("9:00", 7)
+
+      school.add_student_name("Aurora")
+      school.add_student_name("tim")
+      school.add_student_name("megan")
+
+      expect(school.standard_student_names).to eq(["Aurora", "Tim", "Megan"])
+
+    end
   end
 
   context 'Iteration 4' do
