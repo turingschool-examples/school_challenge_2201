@@ -4,7 +4,7 @@ require './lib/school'
 
 RSpec.describe School do
   context 'Iteration 1' do
-    xit 'exists' do
+    it 'exists' do
       school = School.new('9:00', 7)
 
       expect(school).to be_a(School)
