@@ -50,7 +50,17 @@ RSpec.describe School do
   end
 
   context 'Iteration 3' do
-    # Add your own tests that follow the interaction pattern for Iteration 3
+    it 'exists as a School' do
+      school = School.new('9:00', 7)
+
+      expect(school).to be_a(School)
+    end
+
+    it 'can tell if a school is full time' do
+      school = School.new('9:00', 7)
+
+      expect(school.is_full_time?).to be(true)
+    end 
   end
 
   context 'Iteration 4' do
