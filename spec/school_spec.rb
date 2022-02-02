@@ -42,15 +42,18 @@ RSpec.describe School do
     it 'can calculate end time' do
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
+      school_3 = School.new('12:00', 3)
 
       expect(school_1.end_time).to eq('16:00')
       expect(school_2.end_time).to eq('12:00')
+      expect(school_3.end_time).to eq('15:00')
     end
   end
 
   context 'Iteration 3' do
     it 'is full time' do
       school = School.new('9:00', 7)
+
 
       expect(school.is_full_time?).to eq(true)
     end
