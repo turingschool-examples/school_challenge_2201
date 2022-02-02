@@ -40,7 +40,7 @@ RSpec.describe School do
       expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    it 'can calculate end time' do #skipped for now
+    xit 'can calculate end time' do #skipped for now
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
@@ -54,6 +54,17 @@ RSpec.describe School do
     it 'determines whether full time' do
       school = School.new('9:00', 7)
       expect(school.is_full_time?('9:00', 7)).to be(true)
+    end
+
+    it 'standarizes student names' do
+      school = School.new('9:00', 7)
+      school.add_student_name('Aurora')
+      school.add_student_name('tim')
+      school.add_student_name('megan')
+
+      expect(school.standard_student_names).to eq(['Aurora', 'Tim', 'Megan'])
+
+
     end
   end
 

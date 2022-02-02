@@ -8,10 +8,10 @@ class School
   end
 
   def add_student_name(name)
-    @student_names.push(name)
+    students = @student_names.push(name)
   end
 
-  def end_time 
+  def end_time
     t = first.to_datetime
     end_time = t + second
   end
@@ -22,5 +22,13 @@ class School
     elsif
       false
     end
+  end
+
+  def standard_student_names
+    capitalized_names = []
+    @student_names.each do |student|
+      capitalized_names.push(student.capitalize)
+    end
+    return capitalized_names
   end
 end
