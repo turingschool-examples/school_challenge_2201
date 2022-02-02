@@ -69,8 +69,13 @@ RSpec.describe School do
   context 'Iteration 4' do
     it 'can convert end time to clock time' do
       school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 2)
 
+      school_1.end_time
       expect(school_1.convert_end_time_to_clock_time).to eq('4:00')
+
+      school_2.end_time
+      expect(school_2.convert_end_time_to_clock_time).to eq('11:00')
     end
   end
 end

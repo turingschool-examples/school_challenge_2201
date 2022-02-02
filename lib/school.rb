@@ -26,7 +26,7 @@ class School
   end
 
   def is_full_time?
-    if @hours_in_school_day > 5
+    if @hours_in_school_day >= 6
       true
     end
   end
@@ -35,13 +35,16 @@ class School
     @student_names.each do |name|
       @standard_student_names << name.capitalize
     end
-    return @standard_student_names
+    @standard_student_names
   end
 
   def convert_end_time_to_clock_time
-    @start_time = @start_time[0]
-    @start_time = @start_time.to_i
-    @end_time = @start_time + @hours_in_school_day
+    if @end_time[1] == ":"
+      @end_time = @end_time[0]
+    else
+      @end_time = @end_time[0] + @end_time[1]
+    end
+    @end_time = @end_time.to_i
     if @end_time > 12
       @end_time = @end_time - 12
     else
