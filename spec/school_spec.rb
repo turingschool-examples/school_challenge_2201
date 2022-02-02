@@ -40,7 +40,7 @@ RSpec.describe School do
       expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    xit 'can calculate end time' do
+    it 'can calculate end time' do
       school_1 = School.new('9:00', 7)
       school_2 = School.new('9:00', 3)
 
