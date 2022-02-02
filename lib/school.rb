@@ -9,6 +9,7 @@ class School
     @hours_in_school_day = hours_in_school_day
     @student_names = []
     @end_time = @end_time
+    @standard_student_names = []
   end
 
   def add_student_name(name)
@@ -22,6 +23,19 @@ class School
     @end_time = @end_time.to_s
     @end_time = @end_time + ":00"
     @end_time
+  end
+
+  def is_full_time?
+    if @hours_in_school_day > 5
+      true
+    end
+  end
+
+  def standard_student_names
+    @student_names.each do |name|
+      @standard_student_names << name.capitalize
+    end
+    return @standard_student_names
   end
 
 end
