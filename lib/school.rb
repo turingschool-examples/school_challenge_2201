@@ -32,9 +32,13 @@ class School
   end
 
   def standard_student_name
+    temp_array = []
+
     @student_names.each do |name|
-      @student_names << name.capitalize
+      temp_array << name.capitalize
     end
+
+    @student_names.replace(temp_array)
   end
 
 
