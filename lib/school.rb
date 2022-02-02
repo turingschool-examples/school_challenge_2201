@@ -16,4 +16,20 @@ class School
         end_time = start_time.to_i + hours_in_school_day
         return "#{end_time}:00"
     end 
+
+    def is_full_time?
+        if hours_in_school_day > 4
+            return true 
+        else
+            return false
+       end
+    end
+
+    def standard_student_names
+        standard_names = []
+        student_names.each do |name|
+            standard_names.push(name.capitalize)
+        end
+        return standard_names
+    end
 end
