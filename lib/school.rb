@@ -3,7 +3,10 @@ class School
 attr_reader :start_time,
             :hours_in_school_day,
             :student_names,
-            :end_time
+            :end_time,
+            :standard_student_names
+
+
 
   def initialize (start_time, hours_in_school_day)
     @start_time = start_time
@@ -17,11 +20,23 @@ attr_reader :start_time,
   end
 
   def calculate_end_time
-     start_time.to_i + hours_in_school_day
+     @start_time.to_i + @hours_in_school_day
   end
 
   def end_time
     calculate_end_time.to_s + ":00"
+  end
+
+  def is_full_time?
+    @hours_in_school_day > 4
+  end
+
+  def standard_student_names
+    names = []
+    @student_names.each do |name|
+    names << name.capitalize
+    end
+   names
   end
 end
 
