@@ -30,7 +30,7 @@ RSpec.describe School do
   end
 
   context 'Iteration 2' do
-    xit 'can add student names' do
+    it 'can add student names' do
       school = School.new('9:00', 7)
 
       school.add_student_name('Aurora')
