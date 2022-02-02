@@ -50,7 +50,23 @@ RSpec.describe School do
   end
 
   context 'Iteration 3' do
-    # Add your own tests that follow the interaction pattern for Iteration 3
+    #ASSUMING full-time school is at least 4 hours a day...
+    it 'is or is not a full-time school?' do
+      school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 3)
+
+      expect(school_1.is_full_time?).to eq(true)
+      expect(school_2.is_full_time?).to eq(false)
+    end
+
+    it 'can capitalize student names if need be' do
+      school_1 = School.new('11:00', 4)
+      school_1.add_student_name('Aurora')
+      school_1.add_student_name('timmothy')
+      school_1.add_student_name('bILlY')
+
+      expect(school_1.standard_student_names).to eq(['Aurora', 'Timmothy', 'Billy'])
+    end
   end
 
   context 'Iteration 4' do

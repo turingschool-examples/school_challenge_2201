@@ -20,4 +20,25 @@ class School
   def add_student_name (single_name_to_add)
     @student_names << single_name_to_add
   end
+  #determines full or part time status
+  def is_full_time?
+    if (@hours_in_school_day < 4)
+      return false
+    else
+      return true
+    end
+  end
+  #reformats student_names to capitalize first and last names
+  #assumes based on interaction pattern that all passed names will be first names only, code will not tolerate more than one name at a time!
+  def standard_student_names
+    downcased_names = []
+    standardized_names = []
+    @student_names.each do |unformated_name|
+      downcased_names << unformated_name.downcase
+    end
+    downcased_names.each do |name|
+      standardized_names << name.capitalize
+    end
+    return standardized_names
+  end
 end
