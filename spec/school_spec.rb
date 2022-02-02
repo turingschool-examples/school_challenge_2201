@@ -1,54 +1,59 @@
 require 'rspec'
 require 'pry'
-require 'simplecov'
-SimpleCov.start
 require './lib/school'
 
+RSpec.describe School do
+  context 'Iteration 1' do
+    xit 'exists' do
+      school = School.new('9:00', 7)
 
-RSpec.configure do |config|
-  config.default_formatter = 'doc'
-end
+      expect(school).to be_a(School)
+    end
 
-RSpec.describe 'School Spec Harness' do
-  before :each do
-    @school1 = School.new('9:00', 7)
-    @school2 = School.new('10:00', 2)
-  end
+    xit 'has a start time' do
+      school = School.new('9:00', 7)
 
-  describe 'Iteration 1' do
-    xit '1. School Instantiation' do
-      expect(School).to respond_to(:new).with(2).argument
-      expect(@school1).to be_an_instance_of(School)
+      expect(school.start_time).to eq('9:00')
+    end
 
-      expect(@school1).to respond_to(:start_time).with(0).argument
-      expect(@school1.start_time).to eq('9:00')
-      expect(@school2.start_time).to eq('10:00')
+    xit 'has hours in a school day' do
+      school = School.new('9:00', 7)
 
-      expect(@school1).to respond_to(:hours_in_school_day).with(0).argument
-      expect(@school1.hours_in_school_day).to eq(7)
-      expect(@school2.hours_in_school_day).to eq(2)
+      expect(school.hours_in_school_day).to eq(7)
+    end
 
-      expect(@school1).to respond_to(:student_names).with(0).argument
-      expect(@school1.student_names).to eq([])
-      expect(@school2.student_names).to eq([])
+    xit 'starts with no student names' do
+      school = School.new('9:00', 7)
+
+      expect(school.student_names).to eq([])
     end
   end
 
-  describe 'Iteration 2' do
-    xit '2. School #add_student_name' do
-      expect(@school1).to respond_to(:add_student_name).with(1).argument
+  context 'Iteration 2' do
+    xit 'can add student names' do
+      school = School.new('9:00', 7)
 
-      @school1.add_student_name('Megan')
-      @school1.add_student_name('Aurora')
-      @school1.add_student_name('Tim')
+      school.add_student_name('Aurora')
+      school.add_student_name('tim')
+      school.add_student_name('megan')
 
-      expect(@school1.student_names).to eq(['Megan', 'Aurora', 'Tim'])
+      expect(school.student_names).to eq(['Aurora', 'tim', 'megan'])
     end
 
-    xit '3. School #end_time' do
-      expect(@school1).to respond_to(:end_time).with(0).argument
-      expect(@school1.end_time).to eq('16:00')
+    xit 'can calculate end time' do
+      school_1 = School.new('9:00', 7)
+      school_2 = School.new('9:00', 3)
+
+      expect(school_1.end_time).to eq('16:00')
+      expect(school_2.end_time).to eq('12:00')
     end
   end
 
+  context 'Iteration 3' do
+    # Add your own tests that follow the interaction pattern for Iteration 3
+  end
+
+  context 'Iteration 4' do
+    # Add your own tests that follow the interaction pattern for Iteration 4
+  end
 end
