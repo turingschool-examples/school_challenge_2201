@@ -10,7 +10,7 @@ RSpec.describe School do
       expect(school).to be_a(School)
     end
 
-    xit 'has a start time' do
+    it 'has a start time' do
       school = School.new('9:00', 7)
 
       expect(school.start_time).to eq('9:00')
