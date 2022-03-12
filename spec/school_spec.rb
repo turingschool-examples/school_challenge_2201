@@ -67,6 +67,9 @@ RSpec.describe School do
 end
 
   context 'Iteration 4' do
-    # Add your own tests that follow the interaction pattern for Iteration 4
+    it 'can convert end of day time to 12 hour format' do
+      school = School.new('9:00', 7)
+      expect(school.end_time).to eq "4:00"
+    end
   end
 end
