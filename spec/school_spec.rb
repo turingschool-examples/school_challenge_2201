@@ -3,7 +3,9 @@ require 'pry'
 require './lib/school'
 
 RSpec.describe School do
+
   context 'Iteration 1' do
+
     it 'exists' do
       school = School.new('9:00', 7)
 
@@ -50,8 +52,12 @@ RSpec.describe School do
   end
 
   context 'Iteration 3' do
-    # Add your own tests that follow the interaction pattern for Iteration 3
+    it 'can check self to see whether full time' do
+      school = School.new('9:00', 7)
+      expect(school.is_full_time?).to eq true
+    end
   end
+
 
   context 'Iteration 4' do
     # Add your own tests that follow the interaction pattern for Iteration 4
