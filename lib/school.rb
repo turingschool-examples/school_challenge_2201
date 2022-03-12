@@ -1,3 +1,6 @@
+require 'time'
+require 'pry'
+
 class School
   attr_reader :start_time, :hours_in_school_day, :student_names
 
@@ -12,7 +15,7 @@ class School
   end
 
   def end_time
-    start_time + hours_in_school_day
+    start_time.to_i + hours_in_school_day
   end
 
 end
