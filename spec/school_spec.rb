@@ -69,7 +69,7 @@ end
   context 'Iteration 4' do
     it 'can convert end of day time to 12 hour format' do
       school = School.new('9:00', 7)
-      expect(school.end_time).to eq "4:00"
+      expect(school.convert_end_time_to_clock_time).to eq "4:00"
     end
   end
 end
