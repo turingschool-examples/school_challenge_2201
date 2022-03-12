@@ -6,4 +6,9 @@ class School
     @hours_in_school_day = h 
     @student_names = []
   end
+
+  def add_student_name(name)
+    student_names << name
+  end
+
 end
