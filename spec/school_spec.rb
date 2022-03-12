@@ -64,7 +64,7 @@ RSpec.describe School do
       school.add_student_name('megan')
       expect(school.standard_student_names). to eq(['Aurora', 'Tim', 'Megan'])
   end
-
+end
 
   context 'Iteration 4' do
     # Add your own tests that follow the interaction pattern for Iteration 4
