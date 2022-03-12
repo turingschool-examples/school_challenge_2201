@@ -22,4 +22,12 @@ class School
     end
   end
 
+  def standard_student_names
+    s_names = []
+    student_names.each do |n|
+      s_names << n.capitalize
+    end
+    s_names
+  end
+
 end
